@@ -15,9 +15,7 @@ before_script:
 
 build:
     script:
-        - echo "Verible commit:"
-        - echo `git --git-dir=verible/.git log -1 --pretty=oneline`
+        - printf "%s\n%s\n\n" "Verible commit:" "$(git --git-dir=verible/.git log -1 --pretty=oneline)"
         - ./test_loop.sh
-        - echo "Undetected lint violations in:"
-        - cat failed.log
+        - printf "%s\n%s\n" "Undetected lint violations in:" "$(cat failed.log)"
     when: manual
