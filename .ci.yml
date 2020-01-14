@@ -1,0 +1,20 @@
+image:
+    name: ubuntu:18.04
+
+variables:
+    GIT_STRATEGY: clone
+
+before_script:
+  - wget https://github.com/bazelbuild/bazel/releases/download/1.1.0/bazel_1.1.0-linux-x86_64.deb
+  - sudo dpkg -i bazel_1.1.0-linux-x86_64.deb
+  - git clone https://github.com/google/verible.git verible
+  - cd verible && bazel build --noshow_progress --cxxopt='-std=c++17' //...
+
+build:
+    script:
+        - echo "Verible commit:"
+        - echo `git --git-dir=verible/.git log -1 --pretty=oneline`
+        - test_loop.sh
+        - echo "Undetected lint violations in:"
+        - cat failed.log
+    when: manual
