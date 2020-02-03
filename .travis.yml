@@ -1,0 +1,22 @@
+dist: bionic
+
+language: cpp
+
+compiler:
+  - gcc
+
+addons:
+  apt:
+    packages:
+      - g++-8
+
+before_install:
+  - wget https://github.com/bazelbuild/bazel/releases/download/1.1.0/bazel_1.1.0-linux-x86_64.deb
+  - sudo dpkg -i bazel_1.1.0-linux-x86_64.deb
+  - git clone https://github.com/google/verible.git verible
+  - cd verible && bazel build --noshow_progress --cxxopt='-std=c++17' //...
+  - cd -
+
+script:
+  - printf "%s\n%s\n\n" "Verible commit:" "$(git --git-dir=verible/.git log -1 --pretty=oneline)"
+  - ./test_loop.sh
