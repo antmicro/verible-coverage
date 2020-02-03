@@ -15,3 +15,12 @@ for file in ./tests/*.sv; do
 done
 
 printf "\n%s\n%s\n" "Undetected lint violations in:" "$(cat failed.log)"
+
+for file in ./ibex/rtl/*.sv; do
+    echo "------------"
+    echo "Linting file "$file
+    verible/bazel-bin/verilog/tools/lint/verilog_lint -lint_fatal -ruleset all $file
+    if [ $? -eq 0 ]; then
+        echo "- No lint violations."
+    fi
+done
