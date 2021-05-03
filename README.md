@@ -1,5 +1,7 @@
 # Verible style guide coverage tester
 
+Copyright (c) 2020-2021 [Antmicro](https://www.antmicro.com)
+
 This repository contains test files and scripts for checking the extent to which
 [verible](https://github.com/google/verible) covers Basic Style Elements section
 of the [lowRISC style guide](https://github.com/lowRISC/style-guides/blob/master/VerilogCodingStyle.md).
