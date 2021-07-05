@@ -3,7 +3,7 @@
 Copyright (c) 2020-2021 [Antmicro](https://www.antmicro.com)
 
 This repository contains test files and scripts for checking the extent to which
-[verible](https://github.com/google/verible) covers Basic Style Elements section
+[Verible](https://github.com/google/verible) covers Basic Style Elements section
 of the [lowRISC style guide](https://github.com/lowRISC/style-guides/blob/master/VerilogCodingStyle.md).
 
 ## Repository structure
@@ -26,7 +26,7 @@ files that are included as a submodule.
 # Clone the repository
 git clone --recursive https://github.com/antmicro/verible-coverage.git
 
-# Clone and build verible
+# Clone and build Verible
 git clone https://github.com/google/verible.git verible
 cd verible && bazel build --noshow_progress --cxxopt='-std=c++17' //...
 
