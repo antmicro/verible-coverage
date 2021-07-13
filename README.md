@@ -4,7 +4,7 @@ Copyright (c) 2020-2021 [Antmicro](https://www.antmicro.com)
 
 This repository contains test files and scripts for checking the extent to which
 [Verible](https://github.com/google/verible) covers Basic Style Elements section
-of the [lowRISC style guide](https://github.com/lowRISC/style-guides/blob/master/VerilogCodingStyle.md).
+of the [style guide used in the OpenTitan project](https://github.com/lowRISC/style-guides/blob/master/VerilogCodingStyle.md).
 
 ## Repository structure
 
